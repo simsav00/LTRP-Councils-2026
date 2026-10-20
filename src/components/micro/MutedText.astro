@@ -1,0 +1,10 @@
+---
+const {
+    as: Component = "span",
+    class: className = null,
+} = Astro.props;
+---
+
+<Component class={      `text-muted ${className ?? ""}`}>
+    <slot/>
+</Component>

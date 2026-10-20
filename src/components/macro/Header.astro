@@ -1,0 +1,25 @@
+---
+
+---
+
+<header class="bg-elevated-1 border-elevated-2 border-b sticky top-0 shadow-2xl">
+    <nav class="py-2 px-6 flex justify-between ali max-w-384 mx-auto">
+        <a class="flex gap-3 items-center" href="/">
+            <img src="/favicon.webp" alt="LTRP Favicon"
+            class="rounded-xl border border-elevated-3 w-12"
+            >
+
+            <h1 class="text-2xl font-bold">
+                LTRP
+            </h1>
+        </a>  
+
+        <ul class="flex gap-4 items-center">
+            {['Home', 'About', 'Projects', 'Gallery'].map(e => (
+                <li class="">
+                    <a href={`#${e.toLowerCase()}`}>{e}</a>
+                </li>
+            ))}
+        </ul>
+    </nav>
+</header>

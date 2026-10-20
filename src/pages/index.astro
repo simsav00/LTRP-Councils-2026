@@ -1,8 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Header from "../components/Header.astro";
+import Header from "../components/macro/Header.astro";
+import Footer from "../components/macro/Footer.astro";
 ---
 
-<BaseLayout title="LTRP Councils">
+<BaseLayout title="LTRP Councils" bodyClass="flex flex-col min-h-dvh">
 	<Header/>
+
+	<main class="px-4 flex-1">
+		
+	</main>
+
+	<Footer/>
 </BaseLayout>
