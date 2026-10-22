@@ -1,12 +1,8 @@
----
-
----
-
-<header class="bg-elevated-1 border-elevated-2 border-b sticky top-0 shadow-2xl">
-    <nav class="py-2 px-6 flex justify-between ali max-w-384 mx-auto">
+<header class="bg-elevated-1 border-elevated-2 border-b sticky top-0 z-1000 shadow-2xl">
+    <nav class="py-2 px-6 flex justify-between items-center max-w-384 mx-auto">
         <a class="flex gap-3 items-center" href="/">
             <img src="/favicon.webp" alt="LTRP Favicon"
-            class="rounded-xl border border-elevated-3 w-12"
+                 class="rounded-xl border border-elevated-3 w-12"
             >
 
             <h1 class="text-2xl font-bold">
@@ -14,12 +10,81 @@
             </h1>
         </a>  
 
-        <ul class="flex gap-4 items-center">
+        <ul class="flex gap-4 items-center bg-elevated-1 border-elevated-2 border-solid transition-transform duration-300" id="navMenu">
             {['Home', 'About', 'Projects', 'Gallery'].map(e => (
-                <li class="">
+                <li class="cursor-pointer duration-100 transition-colors">
                     <a href={`#${e.toLowerCase()}`}>{e}</a>
                 </li>
             ))}
         </ul>
+
+        <button class="hidden border border-elevated-2 rounded-md cursor-pointer" id="navButton">
+            <svg class="opacity-90 w-10" fill="currentColor" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>
+        </button>
     </nav>
 </header>
+
+<div class="hidden fixed inset-0 z-0 bg-[hsla(0,0%,0%,.5)]" id="navOverlay"></div>
+
+<style>
+    @media(max-width:599px) {
+        #navMenu{   
+            position: absolute;
+            top: 101%;
+            right: 0;
+            width: min(14rem, 100%);
+            height: 100dvh;
+            display: flex;
+            gap: 0;
+            align-items: first baseline;
+            flex-direction: column;
+            border-left-width: 1px;
+            padding-top: 3rem;
+            z-index: 9600;
+
+            transform: translateX(120%);
+        }
+
+        #navMenu.active{
+            transform: none;
+        }
+
+        #navMenu li{
+            padding: 1rem;
+            padding-left: 2rem;
+            width: 100%;
+        }
+
+        #navMenu li:hover{
+            background: hsl(0,0%,16%);
+        }
+
+        #navButton{
+            display:block;
+        }
+
+        #navOverlay.active{
+            display:block;
+        }
+    }
+
+</style>
+
+<script>
+    const navMenu = document.getElementById('navMenu');
+    const navOverlay = document.getElementById('navOverlay');
+    const navButton = document.getElementById('navButton');
+
+    const navItems = document.querySelectorAll('#navMenu > li');
+
+    const closeMenu = () => [navMenu, navOverlay].forEach(el => el?.classList.remove('active'));
+
+    navButton?.addEventListener('click', () => {
+        [navMenu, navOverlay].forEach(el => {
+            el?.classList.toggle('active');
+        });
+    });
+
+    navOverlay?.addEventListener('click', closeMenu);
+    navItems?.forEach(el => el.addEventListener('click', closeMenu));
+</script>

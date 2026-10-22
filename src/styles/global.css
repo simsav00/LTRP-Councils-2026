@@ -7,6 +7,7 @@
     --color-elevated-2: hsl(0,0%,12%);
     --color-elevated-3: hsl(0,0%,16%);
     --color-elevated-5: hsl(0,0%,21%);
+    --color-elevated-6: hsl(0,0%,28%);
 
     --color-primary: hsl(0,0%,100%);
     --color-muted: hsl(0,0%,70%);
@@ -14,10 +15,10 @@
 
     --font-primary: Roboto, system-ui;
     --font-secondary: Cascadia mono, monospace;
-
+    
     --color-accent:  hsl(135,98%,48%);
 
-    --background-image-dotted-surface: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15'><rect x='5.5' y='5.5' width='1' height='1' fill='hsl(0,0%,70%)'/></svg>"), linear-gradient(black)
+    --background-image-dotted-surface: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15'><rect x='5.5' y='5.5' width='1' height='1' fill='hsl(0,0%,40%)'/></svg>"), linear-gradient(black)
 }   
 
 :root {

@@ -1,0 +1,14 @@
+---
+const { 
+    title,
+    titleProps,
+    defaultStyles = true,
+    class: className,
+ } = Astro.props;
+---
+
+<section class={`${defaultStyles ? "flex gap-2 flex-col" : ""} ${className ?? ""}`}>
+    <h2 class={`font-secondary border-elevated-6 text-2xl font-bold ${titleProps?.disableBorderBottom ? "" : "border-b"} ${titleProps?.class ?? ""}`} {...titleProps}>{title}</h2>
+
+    <slot/>
+</section>

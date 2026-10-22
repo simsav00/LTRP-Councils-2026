@@ -2,14 +2,16 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/macro/Header.astro";
 import Footer from "../components/macro/Footer.astro";
+import Main from "../components/sections/Main.astro";
+import Hero from "../components/sections/Hero.astro";
 ---
 
-<BaseLayout title="LTRP Councils" bodyClass="flex flex-col min-h-dvh">
+<BaseLayout title="LTRP Councils" bodyClass="flex flex-col min-h-dvh overflow-x-hidden">
 	<Header/>
 
-	<main class="px-4 flex-1">
-		
-	</main>
+	<Main>
+		<Hero/>
+	</Main>
 
 	<Footer/>
 </BaseLayout>
