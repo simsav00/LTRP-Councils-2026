@@ -1,0 +1,15 @@
+---
+import { users } from "./about";
+import Section from "../micro/Section.astro";
+import ProfileCard from "../micro/ProfileCard.astro";
+---
+
+<Section title="> cat about_us.txt" class="grid grid-cols-[repeat(auto-fit,minmax(min(10rem,100%),1fr))] gap-4">
+    {users.map(u => (
+        <ProfileCard
+            username={u.name}
+            pfp={u.pfp ?? "/favicon.webp"}
+            role={u.role}
+        />
+    ))}
+</Section>

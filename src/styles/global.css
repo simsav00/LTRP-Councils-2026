@@ -18,7 +18,7 @@
     
     --color-accent:  hsl(135,98%,48%);
 
-    --background-image-dotted-surface: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15'><rect x='5.5' y='5.5' width='1' height='1' fill='hsl(0,0%,40%)'/></svg>"), linear-gradient(black)
+    --background-image-dotted-surface: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><rect width='40' height='40' fill='hsl(0,10%,5%)'/><rect x='1.5' y='1.5' width='37' height='37' rx='1.5'/><path d='M3 3 H37' stroke-opacity='0.6' stroke-width='1'/></svg>");
 }   
 
 :root {
