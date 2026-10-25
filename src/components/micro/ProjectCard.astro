@@ -1,3 +1,16 @@
 ---
-
+import Container from "../nano/Container.astro";
+import Heading from "../nano/Heading.astro";
+const { title, desc, img, class: className, url, ...props } = Astro.props;
 ---
+
+<Container as="figure" {...props} class={`${className ?? ""} p-0`}>
+    <a href={url} class="block">
+        {img && <img src={img} alt=""
+                     class="object-cover aspect-video"
+        />}
+        <figcaption class="px-2">
+            {title && <Heading as="h3">{title}</Heading>}
+        </figcaption>
+    </a>
+</Container>
