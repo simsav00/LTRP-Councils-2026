@@ -1,17 +1,32 @@
 ---
-const { 
-    title,
+const {
+    title = null,
     titleProps = {},
-    contentProps = {},
     defaultStyles = true,
     class: className,
- } = Astro.props;
+    ...props
+} = Astro.props;
 ---
 
 <section class="flex gap-2 flex-col">
-    <h2 class={`font-secondary border-elevated-6 text-2xl font-bold pb-2 ${titleProps?.disableBorderBottom ? "" : "border-b"} ${titleProps?.class ?? ""}`} {...titleProps}>{title ?? ""}</h2>
+    {
+        title && (
+            <h2
+                data-symbol="/ "
+                class={`font-secondary border-elevated-5 border-b-2 text-3xl font-bold pb-2 before:content-[attr(data-symbol)]
+                    ${titleProps?.disableBorderBottom ? "" : "border-b"} ${titleProps?.class ?? ""}
+                `}
+                {...titleProps}
+            >
+                {title ?? ""}
+            </h2>
+        )
+    }
 
-    <div {...contentProps} class={`${defaultStyles ? "flex gap-2 flex-col" : ""} ${className ?? ""}`}>
-        <slot/>
+    <div
+        {...props}
+        class={`${defaultStyles ? "flex gap-2 flex-col" : ""} ${className ?? ""}`}
+    >
+        <slot />
     </div>
 </section>

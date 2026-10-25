@@ -1,0 +1,17 @@
+---
+const { as: Element = 'h1', class: className = '', ...props } = Astro.props;
+
+const defaultStyles = {
+  h1: 'text-4xl font-bold my-4 block',
+  h2: 'text-3xl font-bold my-3 block',
+  h3: 'text-2xl font-bold my-2 block',
+  h4: 'text-xl font-bold my-2 block'
+};
+
+//@ts-ignore
+const baseClass = defaultStyles[Element] || defaultStyles.h1;
+---
+
+<Element class={`${baseClass} ${className}`.trim()} {...props}>
+  <slot />
+</Element>

@@ -1,0 +1,8 @@
+---
+const { as: Component = 'div', 
+        class:className = null, 
+} = Astro.props;
+---
+<Component class={`bg-elevated-1 border border-elevated-2 rounded-sm ${className ?? ""}`}>
+    <slot/>
+</Component>

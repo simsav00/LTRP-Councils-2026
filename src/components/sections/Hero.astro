@@ -1,13 +1,21 @@
 ---
+import MutedText from "../micro/MutedText.astro";
 import Section from "../micro/Section.astro";
+import Heading from "../nano/Heading.astro";
+
 ---
 
-<Section title="Introduction" titleProps={{ disableBorderBottom: true, }}>
-    <img src="/favicon.webp" alt="LTRP logo"
-         class="rounded-2xl max-w-24 w-full border-2 border-elevated-2"
-    >
+<Section
+    id="home"
+    titleProps={{ disableBorderBottom: true }}
+    class="flex items-center justify-center border-elevated-2 border-b-2 pb-8"
+>
+    <img
+        src="/favicon.webp"
+        alt="LTRP logo"
+        class="rounded-2xl max-w-24 w-full border-2 border-elevated-2"
+    />
 
-    <h1>
-        Low Tier Robotic Prodigy
-    </h1>
+    <Heading as="h1">LTRP</Heading>
+    <MutedText>Low Tier Robotic Prodigy</MutedText>
 </Section>

@@ -23,5 +23,9 @@ export const users = [
         name: 'Rian',
         role: 'QA Engineer',
         pfp: null,
+    },    {
+        name: 'Rian',
+        role: 'QA Engineer',
+        pfp: null,
     },
 ]
